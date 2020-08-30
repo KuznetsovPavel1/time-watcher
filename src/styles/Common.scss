@@ -1,0 +1,55 @@
+@import "./vars.scss";
+
+.form {
+  border-radius: $radius;
+  background-color: $color-form;
+  min-width: 250px;
+  position: relative;
+  @include padding;
+
+  &__btn {
+    background-color: $color-shadow-gray;
+    border: none;
+    border-radius: $radius;
+    color: $color-black;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.4rem;
+    text-decoration: none;
+
+    @include transition;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: darken($color-shadow-gray, 10%);
+    }
+  }
+
+  &__str {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.error-msg {
+  border-radius: $radius;
+  background-color: $color-error;
+  bottom: 190px;
+  color: $color-red;
+  font-weight: bold;
+  left: 0;
+  position: absolute;
+  right: 0;
+
+  @include padding;
+  @include transition;
+}
+
+.text-hide {
+  opacity: 0.5;
+}

@@ -1,0 +1,50 @@
+@import "./vars.scss";
+
+$animProp: 1s ease-in-out 0s infinite;
+
+@mixin text-status {
+  left: 0.5rem;
+  opacity: 0.8;
+  position: absolute;
+  top: 10%;
+}
+
+.status {
+  animation: $animProp blink;
+  background-color: $color-error;
+  box-shadow: 0 0 3px 3px $color-error;
+  border-radius: $radius;
+  display: inline-block;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  position: relative;
+  width: 4rem;
+  @include transition;
+
+  &.active {
+    background-color: $color-green;
+    box-shadow: 0 0 3px 3px $color-green;
+
+    &::after {
+      content: "online";
+      @include text-status;
+    }
+  }
+
+  &::after {
+    content: "offline";
+    @include text-status;
+  }
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1.05, 1.05);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1.05, 1.05);
+  }
+}

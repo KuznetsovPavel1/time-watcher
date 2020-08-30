@@ -1,0 +1,26 @@
+@import "./styles/CustomInput.scss";
+@import "./styles/Common.scss";
+@import "./styles/Main.scss";
+@import "./styles/Spinner.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}

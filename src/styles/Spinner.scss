@@ -1,0 +1,135 @@
+@import "./vars";
+
+$size: 20px;
+$animProp: 2s ease-in-out 0s infinite;
+$top: translate(12px, 0);
+$right: translate(24px, $size);
+$left: translate(0, $size);
+
+.wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.spinner {
+  height: calc(#{$size} * 2);
+  margin: 5px;
+  position: relative;
+  width: calc(#{$size} * 2 + 5px);
+}
+
+.ball {
+  border-radius: $size;
+  height: $size;
+  position: absolute;
+  width: $size;
+
+  &-red {
+    animation: $animProp move-red;
+    background-color: $color-red;
+  }
+
+  &-black {
+    animation: $animProp move-bw;
+  }
+
+  &-black {
+    background-color: $color-black;
+  }
+
+  &-gray {
+    animation: $animProp move-gray;
+    background-color: $color-gray;
+  }
+}
+
+@keyframes move-red {
+  0% {
+    transform: $right;
+  }
+  12% {
+    transform: $top;
+  }
+  24% {
+    transform: $top;
+  }
+  36% {
+    transform: $left;
+  }
+  48% {
+    transform: $right;
+  }
+  60% {
+    transform: $left;
+  }
+  72% {
+    transform: $top;
+  }
+  84% {
+    transform: $right;
+  }
+  100% {
+    transform: $right;
+  }
+}
+
+@keyframes move-bw {
+  0% {
+    transform: $top;
+  }
+  12% {
+    transform: $right;
+  }
+  24% {
+    transform: $left;
+  }
+  36% {
+    transform: $top;
+  }
+  48% {
+    transform: $top;
+  }
+  60% {
+    transform: $right;
+  }
+  72% {
+    transform: $left;
+  }
+  84% {
+    transform: $top;
+  }
+  100% {
+    transform: $top;
+  }
+}
+
+@keyframes move-gray {
+  0% {
+    transform: $left;
+  }
+  12% {
+    transform: $left;
+  }
+  24% {
+    transform: $right;
+  }
+  36% {
+    transform: $right;
+  }
+  48% {
+    transform: $left;
+  }
+  60% {
+    transform: $top;
+  }
+  72% {
+    transform: $right;
+  }
+  84% {
+    transform: $left;
+  }
+  100% {
+    transform: $left;
+  }
+}

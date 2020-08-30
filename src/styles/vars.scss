@@ -1,0 +1,18 @@
+// COLORS
+$color-black: #000000;
+$color-red: rgb(219, 0, 41);
+$color-error: rgb(238, 138, 152);
+$color-gray: gray;
+$color-form: rgb(220, 230, 230);
+$color-green: rgb(15, 185, 50);
+$color-shadow-gray: rgb(177, 177, 177);
+
+$radius: 0.3rem;
+
+@mixin transition {
+  transition: 0.2s;
+}
+
+@mixin padding {
+  padding: 10px 20px;
+}
