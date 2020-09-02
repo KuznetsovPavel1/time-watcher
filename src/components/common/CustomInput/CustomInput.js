@@ -1,7 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import "./CustomInput.scss";
 
-const CustomInput = ({ label = "", value = "", type = "text", onChange }) => {
+const CustomInput = ({
+  label = "",
+  value = "",
+  type = "text",
+  onChange,
+  autoFocus = false,
+}) => {
   const ref = useRef(null);
   const [placeholder, setPlaceholder] = useState("placeholder");
 
@@ -43,6 +50,7 @@ const CustomInput = ({ label = "", value = "", type = "text", onChange }) => {
         }}
         value={value}
         autoComplete="off"
+        autoFocus={autoFocus}
       />
       {label && (
         <span className={`custom-input__label ${placeholder}`}>{label}</span>

@@ -32,6 +32,11 @@ export const connect2WS = async (history) => {
       history.push("/login");
     }
   } catch (error) {
-    return "Something went wrong";
+    if (error?.response?.status === 401) {
+      localStorage.removeItem(tokenName);
+      history.push("/login");
+    }
+
+    return error?.response?.data || "Something went wrong";
   }
 };

@@ -21,7 +21,7 @@
     @include transition;
 
     &:focus {
-      outline: none;
+      @include focusShadow;
     }
 
     &:hover {

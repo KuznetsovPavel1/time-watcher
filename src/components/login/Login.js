@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CustomInput from "../common/CustomInput";
-import Spinner from "../common/Spinner";
+import CustomInput from "../common/CustomInput/CustomInput";
+import Spinner from "../common/Spinner/Spinner";
 import { signIn } from "../../api/api";
 
 const Login = ({ history }) => {
@@ -37,6 +37,7 @@ const Login = ({ history }) => {
         label="Username"
         value={login}
         onChange={(e) => setLogin(e.target.value)}
+        autoFocus={true}
       />
       <CustomInput
         label="Password"

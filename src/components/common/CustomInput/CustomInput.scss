@@ -1,4 +1,4 @@
-@import "./vars";
+@import "../styles/vars.scss";
 
 .custom-input {
   display: flex;
@@ -14,8 +14,7 @@
     transition: transparent 50000s ease-in-out 0s;
 
     &:focus {
-      box-shadow: 0 0 6px 4px $color-gray;
-      outline: none;
+      @include focusShadow;
     }
   }
 

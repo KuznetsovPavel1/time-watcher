@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, withRouter } from "react-router-dom";
 import moment from "moment";
+import "./Main.scss";
 import { connect2WS, tokenName } from "../../api/api";
 
 const Main = ({ history }) => {
@@ -36,7 +37,9 @@ const Main = ({ history }) => {
         }
       }
     } catch (error) {
-      setError("Connection error");
+      if (isMounted.current) {
+        setError("Connection error");
+      }
     }
   };
 
