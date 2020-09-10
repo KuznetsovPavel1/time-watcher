@@ -46,7 +46,7 @@ const Main = ({ history }) => {
   useEffect(() => {
     return () => {
       isMounted.current = false;
-      socketRef.current.close();
+      socketRef.current?.close();
     };
   }, []);
 
